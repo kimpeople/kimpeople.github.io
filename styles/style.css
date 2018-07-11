@@ -1,0 +1,29 @@
+html {
+  font-size: 30px;
+  font-family: 'Black Han Sans', sans-serif;
+  background-color: #333333;
+}
+
+h1 {
+  color: black;
+  text-align: center;
+  margin: 0;
+  padding: 20px 0;
+}
+li {
+  font-size: 14px;
+  line-height: 2;
+  letter-spacing: 1px;
+}
+body {
+  width: 1200px;
+  margin: 0 auto;
+  background-color: #ffb3ff;
+  padding: 0 20px 20px 20px;
+  border: 0px;
+}
+p {
+  font-size: 14px;
+  letter-spacing: 1px;
+
+}

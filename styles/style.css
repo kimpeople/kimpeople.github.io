@@ -1,35 +1,53 @@
 html {
-  font-size: 30px;
-  font-family: 'Black Han Sans', sans-serif;
-  background-color: #333333;
+  font-size: 15px;
+  font-family: 'Iceland', cursive;
+  background-color: white;
 }
 
-h1 {
+.container{
+  width: 1200px;
+  border: 1px solid white;
+  margin: auto;
+}
+
+a:link , a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: red;
+}
+
+header {
   color: black;
-  text-align: center;
+  text-align: left;
+
   margin: 0;
   padding: 20px 0;
+  width: auto;
+  height: auto;
 }
-li {
-  font-size: 14px;
-  line-height: 2;
-  letter-spacing: 1px;
-}
-body {
-  width: 1200px;
-  margin: 0 auto;
-  background-color: #ffb3ff;
-  padding: 0 20px 20px 20px;
-  border: 0px;
-}
-p {
-  font-size: 14px;
-  letter-spacing: 1px;
 
+nav{
+  float:left;
+  width: 200px;
+  padding: 10px;
+  border-right: 1px solid black;
 }
-img {
+article{
+  float:left;
+  width: 300px;
+  border-left: 1px solid black;
+  margin-left: -1px;
+}
+
+
+img , h2 , p {
   display: block;
-  margin: 0 auto;
-  max-width: 100%;
-  width:600;
+  width:1000px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }

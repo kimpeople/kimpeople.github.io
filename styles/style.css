@@ -1,9 +1,10 @@
 html {
-  font-size: 15px;
-  font-family: 'Iceland', cursive;
+  font-size: 12px;
+  font-family: 'Song Myung', serif;
   background-color: white;
 }
 
+@media screen and (min-width:600px) {
 .container{
   width: 1200px;
   border: 1px solid white;
@@ -21,33 +22,125 @@ a:hover {
 
 header {
   color: black;
-  text-align: left;
-
-  margin: 0;
-  padding: 20px 0;
+  text-align: center;
+  margin: 10px;
+  padding: 0px 0px;
   width: auto;
-  height: auto;
+  height: 10px;
 }
 
 nav{
   float:left;
   width: 200px;
   padding: 10px;
+  margin-top: 50px;
+  /*
   border-right: 1px solid black;
+  */
 }
 article{
+  margin: 10px;
   float:left;
+  width: 50px;
+  /*
+  border-left: 1px solid black;
+  */
+}
+
+li{
+  list-style: none;
+  padding: 0px 0px 20px 0px;
+}
+
+
+img {
+    display: block;
+    width: 800px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+
+h2{
+  display: block;
+  text-align: center;
+  width: 800px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 130px;
+  margin-bottom: 10px;
+}
+
+p {
+  text-align: center;
+  display: block;
+  width: 800px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+}
+
+.button{
+  padding-left: 70px;
+  text-align: center;
+  clear: both;
+
+}
+
+}
+/* flex w3.css 를 사용하여 칸을 맞추고 그랬던 버젼의 초기버젼.
+
+html {
+  font-size: 15px;
+  font-family: 'Song Myung', serif;
+  background-color: white;
+}
+
+a:link , a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: red;
+}
+
+.container{
+  display: -webkit-flex;
+  display: flex;
+}
+
+.nav{
+  text-align: center;
+  width: 170px;
+  padding: 3px;
+  border-right: 1px solid black;
+
+}
+
+.article{
+  -webkit-flex: 1;
+    flex: 1;
   width: 300px;
   border-left: 1px solid black;
   margin-left: -1px;
 }
 
+li{
+  list-style: none;
+  padding: 0px 0px 20px 0px;
+}
 
 img , h2 , p {
   display: block;
-  width:1000px;
+  width:900px;
   margin-left: 20px;
   margin-right: 20px;
   margin-top: 20px;
   margin-bottom: 20px;
 }
+
+*/

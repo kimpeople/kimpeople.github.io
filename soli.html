@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <title>HOW CAN I TELL YOU I HEAR THE WAY YOU ARE</title>
+    <link href="styles/exp.css" rel="stylesheet">
+    <body class="hack">
+      <div class="grid">
+        <aside class="cell -3of12">
+          <center>
+          <div class="logo__component">
+          <a href="index.html">HOW CAN I TELL YOU I HEAR THE WAY YOU ARE</a>
+          </div>
+        </center>
+          <center>
+          <nav class="side-nav__component" role="navigation">
+            <ul class="side-nav-list" role="menubar">
+              <li style="font-size:18px;"><a href="index.html">⚀ ⚂ ⚄</a></li>
+              <li><a href="soli.html">Solidarity</a></li>
+              <li><a href="sadpage.html">Sadseoul</a></li>
+              <li><a href="YES WE CAM.html">YES WE CAM</a></li>
+              <li><a href="ABOUT.html">#About#</a></li>
+            </ul>
+          </nav>
+        </center>
+        </aside>
+      <main class="cell -9of12" role="main">
+        <section>
+            <div class="button">
+              <button class="btn" onclick="plusDivs(-1)"> Prev </button>
+                          /
+              <button class="btn" onclick="plusDivs(1)"> Next </button>
+            </div>
+            <img class="mySlides" src="images/s_01.jpg" alt="">
+            <img class="mySlides" src="images/s_02.jpg" alt="">
+            <img class="mySlides" src="images/s_03.jpg" alt="">
+            <img class="mySlides" src="images/s_04.jpg" alt="">
+        </section>
+      </main>
+    </div>
+    </div>
+    <script>
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+    showDivs(slideIndex += n);
+    }
+
+    function showDivs(n) {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    if (n > x.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = x.length} ;
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+    x[slideIndex-1].style.display = "block";
+    }
+    </script>
+    </body>
+</html>

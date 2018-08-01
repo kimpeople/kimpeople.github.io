@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HOW CAN I TELL YOU I HEAR THE WAY YOU ARE</title>
+    <link href="styles/style.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="http://www.w3ii.com/lib/w3.css">
+    <link href="https://fonts.googleapis.com/css?family=Song+Myung" rel="stylesheet">
+  <body>
+    <div class="grid-container">
+    <div class="header">
+      <header><h1><a href="index.html">HOW CAN I TELL YOU I HEAR THE WAY YOU ARE</a></h1></header>
+    </div>
+      <div class="nav">
+        <nav>
+          <ul>
+            <li><a href="index.html">Roll the Dice</a></li>
+            <li><a href="B.html">Solidarity</a></li>
+            <li><a href="sadpage.html">Sadseoul</a></li>
+            <li><a href="YES WE CAM.html">YES WE CAM</a></li>
+            <li><a href="ABOUT.html">About</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="article">
+        <article>
+          <img class="mySlides" src="images/s_01.jpg" alt="">
+          <img class="mySlides" src="images/s_02.jpg" alt="">
+          <img class="mySlides" src="images/s_03.jpg" alt="">
+          <img class="mySlides" src="images/s_04.jpg" alt="">
+          <div class="button">
+            <a class="w3-btn-floating" onclick="plusDivs(-1)"> <<< </a>
+            <a class="w3-btn-floating" onclick="plusDivs(+1)"> >>> </a>
+          </div>
+        </article>
+      </div>
+    </div>
+
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+var i;
+var x = document.getElementsByClassName("mySlides");
+if (n > x.length) {slideIndex = 1}
+if (n < 1) {slideIndex = x.length} ;
+for (i = 0; i < x.length; i++) {
+   x[i].style.display = "none";
+}
+x[slideIndex-1].style.display = "block";
+}
+</script>
+    </body>
+</html>

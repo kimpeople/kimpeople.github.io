@@ -27,37 +27,46 @@
         </aside>
       <main class="cell -9of12" role="main">
         <section>
-            <div class="button">
-              <button class="btn" onclick="plusDivs(-1)"> Prev </button>
-                          /
-              <button class="btn" onclick="plusDivs(1)"> Next </button>
-            </div>
-            <img class="mySlides" src=" " alt="">
-            <img class="mySlides" src=" " alt="">
-            <img class="mySlides" src=" " alt="">
-            <img class="mySlides" src=" " alt="">
+          <span class="button">
+            <button class="btn" onclick="plusDivs(-1)"> Prev </button>
+                        -
+            <button class="btn" onclick="plusDivs(1)"> Next </button>
+              <span class="counter"> 01/05 </span>
+          </span>
+
+          <img class="mySlides" src="images/ywc_e01.jpg" alt="">
+          <img class="mySlides" src="images/ywc_01.jpg" alt="">
+          <img class="mySlides" src="images/ywc_e02.jpg" alt="">
+          <img class="mySlides" src="images/ywc_02.jpg" alt="">
+
         </section>
       </main>
     </div>
     </div>
     <script>
-    var slideIndex = 1;
-    showDivs(slideIndex);
 
-    function plusDivs(n) {
-    showDivs(slideIndex += n);
-    }
+        var slideIndex = 1;
+        showDivs(slideIndex);
 
-    function showDivs(n) {
-    var i;
-    var x = document.getElementsByClassName("mySlides");
-    if (n > x.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = x.length} ;
-    for (i = 0; i < x.length; i++) {
-       x[i].style.display = "none";
-    }
-    x[slideIndex-1].style.display = "block";
-    }
+        function plusDivs(n) {
+        showDivs(slideIndex += n);
+        }
+
+        function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        if (n > x.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = x.length} ;
+        for (i = 0; i < x.length; i++) {
+           x[i].style.display = "none";
+        }
+        x[slideIndex-1].style.display = "block";
+
+
+            var counter = document.getElementsByClassName("counter")[0];
+            counter.innerHTML = "<span>" + slideIndex + "/" + x.length + "</span>";
+
+        }
     </script>
     </body>
 </html>

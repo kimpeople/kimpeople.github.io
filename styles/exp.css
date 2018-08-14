@@ -256,6 +256,12 @@ a:hover {
  .side-nav-list2{
    padding: 0;
  }
+ /*test img size added*/
+ img {
+ display:block;
+ max-width:100%;
+ height:auto
+}
 
 }
 

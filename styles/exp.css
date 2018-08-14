@@ -29,6 +29,9 @@ button{
 .side-nav-list{
   padding-left: 0px;
 }
+.side-nav-list2{
+  padding-left: 0px;
+}
 .logo__component{
   padding-top: 20px;
 }
@@ -68,11 +71,6 @@ button:hover {
  color:#fff
 }
 
-
-.dice {
-  font-size: 20px;
-}
-
 .logo__component{
   margin-top: 10px;
   font-size: 10px;
@@ -86,6 +84,8 @@ b{
   text-decoration: none;
   font-weight: normal;
 }
+
+
 
 /*
 h1,h2,h3,h4,h5,h6 {
@@ -118,9 +118,6 @@ a:hover {
  background-color:pink;
  color:#fff
 }
-
-
-
 
 
 .grid {
@@ -256,6 +253,9 @@ a:hover {
  .side-nav-list{
    padding: 0;
  }
+ .side-nav-list2{
+   padding: 0;
+ }
 
 }
 
@@ -284,7 +284,7 @@ a:hover {
 .hack ul>li:after {
  content:"-"
 }
-*/
+
 .hack ol {
  counter-reset:a
 }
@@ -292,6 +292,7 @@ a:hover {
  content:counter(a) ".";
  counter-increment:a
 }
+*/
 
 
 
@@ -328,6 +329,9 @@ a:hover {
  .side-nav-list{
    padding: 0;
  }
+ .side-nav-list2{
+   padding: 0;
+ }
 
 }
 
@@ -338,7 +342,7 @@ main {
 img {
  display:block;
  max-width:100%;
- height:auto%;
+ height:100%;
 }
 
 .hack .media .media-body {
@@ -351,8 +355,13 @@ img {
 }
 .side-nav__component {
  max-width:90%;
- margin:5rem auto
+ margin-top: 5rem
 }
+.side-nav__component2 {
+ max-width:90%;
+
+}
+
 section{
   margin-top: 50px
 }
@@ -364,6 +373,15 @@ section{
   margin:0
  }
  .side-nav__component .side-nav-list {
+  width:100%;
+  display:flex;
+  justify-content:space-between
+ }
+ .side-nav__component2 {
+   max-width:100%;
+   margin:0
+ }
+ .side-nav__component2 .side-nav-list2 {
   width:100%;
   display:flex;
   justify-content:space-between

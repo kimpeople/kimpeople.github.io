@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HOW CAN I TELL YOU I HEAR THE WAY YOU ARE</title>
+    <link href="styles/exp.css" rel="stylesheet">
+    <body class="hack">
+      <div class="grid">
+        <aside class="cell -3of12">
+          <center>
+          <div class="logo__component">
+          <a href="index.html">HOW CAN I TELL YOU I HEAR THE WAY YOU ARE</a>
+          </div>
+        </center>
+          <center>
+            <nav class="side-nav__component" role="navigation">
+              <ul class="side-nav-list" role="menubar">
+                <li><a href="soli.html">Solidarity_1</a></li>
+                <li><a href="soli2.html">Solidarity_2</a></li>
+                <li><a href="hland.html">Homeland_1</a></li>
+                <li><a href="hland2.html">Homeland_2</a></li>
+            </ul>
+          </nav>
+          <nav class="side-nav__component2" role="navigation">
+            <ul class="side-nav-list2" role="menubar">
+              <li><a href="sadpage.html">Forest_For_Rest</a></li>
+              <li><a href="mus.html">Crossfade</a></li>
+              <li><a href="YES WE CAM.html">Yes_We_Cam</a></li>
+              <li><a href="ABOUT.html">#About#</a></li>
+          </ul>
+        </nav>
+        </center>
+        </aside>
+      <main class="cell -9of12" role="main">
+        <section>
+            <img class="mySlides" src="images/sol_00.jpg" alt="">
+            <img class="mySlides" src="images/sol_01.jpg" alt="">
+            <img class="mySlides" src="images/sol_02.jpg" alt="">
+            <img class="mySlides" src="images/sol_03.jpg" alt="">
+            <span class="button">
+              <button class="btn" onclick="plusDivs(-1)"> Prev </button>
+                          -
+              <button class="btn" onclick="plusDivs(1)"> Next </button>
+                <span class="counter"> 01/05 </span>
+            </span>
+        </section>
+      </main>
+    </div>
+    </div>
+    <script>
+
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+    showDivs(slideIndex += n);
+    }
+
+    function showDivs(n) {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    if (n > x.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = x.length} ;
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+    x[slideIndex-1].style.display = "block";
+
+
+        var counter = document.getElementsByClassName("counter")[0];
+        counter.innerHTML = "<span>" + slideIndex + "/" + x.length + "</span>";
+
+    }
+
+    </script>
+    </body>
+</html>

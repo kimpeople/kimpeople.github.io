@@ -34,13 +34,24 @@
         </aside>
       <main class="cell -9of12" role="main">
         <section>
-          About Me
 
+
+            <img class="mySlides" src="images/sol_00.jpg" alt="">
+            <img class="mySlides" src="images/sol_01.jpg" alt="">
+            <img class="mySlides" src="images/sol_02.jpg" alt="">
+            <img class="mySlides" src="images/sol_03.jpg" alt="">
+            <span class="button">
+              <button class="btn" onclick="plusDivs(-1)"> Prev </button>
+                          -
+              <button class="btn" onclick="plusDivs(1)"> Next </button>
+                <span class="counter"> 01/05 </span>
+            </span>
         </section>
       </main>
     </div>
     </div>
     <script>
+
     var slideIndex = 1;
     showDivs(slideIndex);
 
@@ -57,6 +68,11 @@
        x[i].style.display = "none";
     }
     x[slideIndex-1].style.display = "block";
+
+
+        var counter = document.getElementsByClassName("counter")[0];
+        counter.innerHTML = "<span>" + slideIndex + "/" + x.length + "</span>";
+
     }
     </script>
     </body>

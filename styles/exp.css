@@ -256,12 +256,11 @@ a:hover {
  .side-nav-list2{
    padding: 0;
  }
- /*test img size added*/
  img {
- display:block;
- max-width:100%;
- height:auto
-}
+  display:block;
+  max-width:100%;
+  height:auto;
+ }
 
 }
 
@@ -338,13 +337,11 @@ a:hover {
  .side-nav-list2{
    padding: 0;
  }
- 
- /*test img size added*/
  img {
- display:block;
- max-width:100%;
- height:auto
-}
+  display:block;
+  max-width:100%;
+  height:auto
+ }
 
 }
 
@@ -357,6 +354,7 @@ img {
  max-width:100%;
  height:auto
 }
+
 
 .hack .media .media-body {
  min-width:250px
@@ -399,10 +397,9 @@ section{
   display:flex;
   justify-content:space-between
  }
- /*test img size added*/
  img {
- display:block;
- max-width:100%;
- height:auto
-}
+  display:block;
+  max-width:100%;
+  height:auto;
+ }
 }

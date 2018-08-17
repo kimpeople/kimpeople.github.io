@@ -66,9 +66,14 @@ button{
 
 }
 
-button:hover {
- background-color:pink;
+.btn:hover {
+ background-color:grey;
  color:#fff
+}
+
+.btn:active{
+  background-color: grey;
+  color:#fff
 }
 
 .logo__component{
@@ -84,6 +89,12 @@ b{
   text-decoration: none;
   font-weight: normal;
 }
+
+.about{
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
 
 
 
@@ -115,10 +126,13 @@ a:link , a:visited {
   color: inherit;
 }
 a:hover {
- background-color:pink;
+ background-color:grey;
  color:#fff
 }
-
+a:active {
+  background-color: grey;
+  color:#fff
+}
 
 .grid {
  display:-ms-flexbox;
@@ -331,17 +345,18 @@ a:hover {
  aside{
    text-align: center;
  }
- .side-nav-list{
-   padding: 0;
+
  }
- .side-nav-list2{
-   padding: 0;
+ .side-nav-list, .side-nav-list2{
+   padding-left: 3px;
+   padding-right: 3px;
+
  }
  img {
   display:block;
   max-width:100%;
   height:auto
- }
+}
 
 }
 
@@ -374,7 +389,7 @@ img {
 }
 
 section{
-  margin-top: 50px
+  margin-top: 30px
 }
 
 

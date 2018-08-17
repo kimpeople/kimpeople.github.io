@@ -4,10 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="title" content="photographer kim min,사진가 김민">
-    <meta name="keywords" content="photography, documentary, press photo, korean photo, black and white photo, 집회, 시위, 경찰, 채증, 사진가, 다큐멘터리 사진, 김민 사진가">
+    <meta name="keywords" content="photography, documentary, black and white, 집회, 시위, 경찰, 채증, 사진가, 다큐멘터리 사진, 김민 사진가">
     <meta name="description" content="photographer kim min's personal website">
     <title>##kim min##</title>
     <link href="styles/exp.css" rel="stylesheet">
+  </head>
     <body class="hack">
       <div class="grid">
         <aside class="cell -3of12">
@@ -136,30 +137,23 @@
     </div>
     </div>
     <script>
-
-        var slideIndex = 1;
-        showDivs(slideIndex);
-
-        function plusDivs(n) {
-        showDivs(slideIndex += n);
-        }
-
-        function showDivs(n) {
-        var i;
-        var x = document.getElementsByClassName("mySlides");
-        if (n > x.length) {slideIndex = 1}
-        if (n < 1) {slideIndex = x.length} ;
-        for (i = 0; i < x.length; i++) {
-           x[i].style.display = "none";
-        }
-        x[slideIndex-1].style.display = "block";
-
-
-            var counter = document.getElementsByClassName("counter")[0];
-            counter.innerHTML = "<span>" + slideIndex + "/" + x.length + "</span>";
-
-        }
-
+    var slideIndex = 1;
+    showDivs(slideIndex);
+    function plusDivs(n) {
+    showDivs(slideIndex += n);
+    }
+    function showDivs(n) {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    if (n > x.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = x.length} ;
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+    x[slideIndex-1].style.display = "block";
+        var counter = document.getElementsByClassName("counter")[0];
+        counter.innerHTML = "<span>" + slideIndex + "/" + x.length + "</span>";
+    }
     </script>
     </body>
 </html>

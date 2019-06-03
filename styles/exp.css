@@ -1,6 +1,7 @@
 a,button{-webkit-text-decoration-skip:objects;text-decoration:none}
 a,a:link,a:visited,b,button{text-decoration:none}
-.btn:active,.btn:hover,a:active,a:hover{background-color:grey;color:#fff}
+.btn:hover,a:active,a:hover{background-color:grey;color:#fff}
+.btn:active,a:active{color:red}
 button,section{margin-bottom:10px}
 .container,aside,main{max-width:70rem}
 html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;font-size:12px;color:#fff;background-color:#000}

@@ -3,7 +3,7 @@ a,a:link,a:visited,b,button{text-decoration:none}
 .btn:hover,a:hover{background-color:grey;color:#fff}
 .btn:active,a:active{background-color:red}
 button,section{margin-bottom:10px}
-.container,aside,main{max-width:70rem}
+.container,aside,main{max-width:90rem}
 html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;font-size:12px;color:#fff;background-color:#000}
 article,aside,footer,header,main,nav,section{display:block}
 *,.cell{box-sizing:border-box}

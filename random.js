@@ -11,6 +11,5 @@ randomimg[randomimg.length] = 'images/9.jpg';
 randomimg[randomimg.length] = 'images/10.jpg';
 randomimg[randomimg.length] = 'images/11.jpg';
 randomimg[randomimg.length] = 'images/12.jpg';
-randomimg[randomimg.length] = 'images/13.jpg';
 randomimg[randomimg.length] = 'images/14.jpg';
 randomimg[randomimg.length] = 'images/15.jpg';

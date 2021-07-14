@@ -61,7 +61,7 @@ aside{text-align:center}
 
 .side-nav-list,.side-nav-list2,.side-nav-list3{padding-left:3px;padding-right:3px}
 main{padding:0 .5rem}
-img{max-width:100%;height:auto}
+img{max-height: 850px;max-width:100%;height:auto}
 .hack .media .media-body{min-width:250px}
 .logo__component{border-bottom:1px solid #fff;text-align:center;max-width:90%;margin-top:10px}
 .side-nav__component{max-width:90%;margin-top:5rem}

@@ -1,0 +1,126 @@
+html {
+  font-size: 12px;
+  font-family: 'Song Myung', serif;
+  background-color: white;
+}
+
+.grid-container {
+  display: grid;
+  height: 100%;
+  grid-template-columns: 0.1fr 0.4fr 3.3fr 0.6fr 0.5fr;
+  grid-template-rows: 0.4fr 2.5fr 0.1fr;
+  grid-template-areas: "blank logo header header blank2" "blank menu article article blank2" "blank foot foot foot blank2";
+}
+
+.article { grid-area: article; }
+
+.header { grid-area: header; }
+
+.menu { grid-area: menu; }
+
+.logo { grid-area: logo; }
+
+.foot { grid-area: foot; }
+
+.blank { grid-area: blank; }
+
+.blank2 { grid-area: blank2; }
+
+
+/*
+@media screen and (min-width:600px) {
+.container{
+  width: 1200px;
+  border: 1px solid white;
+  margin: auto;
+}
+*/
+
+a:link , a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  color: red;
+}
+
+header {
+  color: black;
+  text-align: center;
+  /*
+  text-align: center;
+  */
+}
+
+nav{
+
+}
+article{
+
+}
+
+li{
+  list-style: none;
+  padding: 0px 0px 20px 0px;
+}
+
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  height: auto;
+
+  }
+
+/* for mobile 
+
+  @media screen and (max-width: 450px) {
+    .grid-container {
+      background-color: pink;
+    display: grid;
+    height: 100%;
+    grid-template-columns: 0.5fr 1.5fr;
+    grid-template-rows: 0.2fr 2.3fr;
+    grid-template-areas: "menu header" "article article";
+  }
+
+  .article { grid-area: article; }
+
+  .menu { grid-area: menu; }
+
+  .header { grid-area: header; }
+
+}
+*/
+
+
+
+
+/*
+h2{
+  display: block;
+  text-align: center;
+  width: 800px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 130px;
+  margin-bottom: 10px;
+}
+
+p {
+  text-align: center;
+  display: block;
+  width: 800px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+*/
+
+.button{
+  text-align: center;
+}

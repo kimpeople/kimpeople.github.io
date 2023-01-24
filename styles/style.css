@@ -1,6 +1,6 @@
 html {
   font-size: 12px;
-  font-family: 'Song Myung', serif;
+  font-family: 'Song Myung';
   background-color: white;
 }
 
@@ -27,14 +27,14 @@ html {
 .blank2 { grid-area: blank2; }
 
 
-/*
+
 @media screen and (min-width:600px) {
 .container{
   width: 1200px;
   border: 1px solid white;
   margin: auto;
 }
-*/
+
 
 a:link , a:visited {
   text-decoration: none;
@@ -75,7 +75,7 @@ img {
 
   }
 
-/* for mobile 
+/* for mobile  */
 
   @media screen and (max-width: 450px) {
     .grid-container {

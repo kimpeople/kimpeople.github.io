@@ -4,13 +4,13 @@ a,a:link,a:visited,b,button{text-decoration:none}
 .btn:active,a:active{background-color:red}
 button,section{margin-bottom:10px}
 .container,aside,main{max-width:90rem}
-html{line-height:1.05;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;font-size:12px;color:#f2f2f2;background-color:#0d0d0d}
+html{line-height:1.05;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;font-size:13px;color:#f2f2f2;background-color:#0d0d0d}
 article,aside,footer,header,main,nav,section{display:block}
 *,.cell{box-sizing:border-box}
 button{border:0;outline:0;background-color:transparent;color:#fff}
-.hack,.hack blockquote,.hack code,.hack em,.hack h1,.hack h2,.hack h3,.hack h4,.hack h5,.hack h6,.hack strong,body,button{font-size:1.3rem;
+.hack,.hack blockquote,.hack code,.hack em,.hack h1,.hack h2,.hack h3,.hack h4,.hack h5,.hack h6,.hack strong,body,button{font-size:1rem;font-family:Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif}
 }*{text-rendering:geometricPrecision}
-body{line-height:1.8rem;margin:0;}.logo__component{padding-top:20px;font-size:10px}
+body{line-height:1.4rem;margin:0;}.logo__component{padding-top:20px;font-size:10px}
 .imgcap{text-align:right}
 b{font-weight:400}.about{padding-left:2px;padding-right:2px}
 a{background-color:transparent;color:#ff2e88}
@@ -62,7 +62,7 @@ aside{text-align:center}
 }
 
 .side-nav-list,.side-nav-list2,.side-nav-list3{padding-left:3px;padding-right:3px}
-main{padding:0rem;word-spacing:0rem;}
+main{padding:0rem;word-spacing:-0.2rem;}
 img{max-height: 800px;max-width:100%;height:auto}
 .hack .media .media-body{min-width:250px}
 .logo__component{border-bottom:1px solid #fff;text-align:center;max-width:90%;margin-top:10px}

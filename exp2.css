@@ -14,7 +14,7 @@ body{line-height:1.5rem;margin:0}.logo__component{padding-top:20px;font-size:10p
 b{font-weight:400}.about{padding-left:2px;padding-right:2px}
 a{background-color:transparent;color:#ff2e88}
 a:link,a:visited{color:inherit}.grid{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap}.hack
-
+.grid{overscroll-behavior: none;}
 li,img{display:block}.grid.\-top{-ms-flex-align:start;-ms-grid-row-align:flex-start;align-items:flex-start}
 .grid.\-middle{-ms-flex-align:center;-ms-grid-row-align:center;align-items:center}
 .grid.\-bottom{-ms-flex-align:end;-ms-grid-row-align:flex-end;align-items:flex-end}

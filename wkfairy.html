@@ -3,17 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">	
-	<meta property="og:type" content="website">
-    <meta property="og:image" content="https://kimpeople.github.io/images/main.jpg"/>
-	<meta property="og:description" content="scene and sin, portfolio website">
-	<meta property="og:title" content="김민 KIM MIN">
-	<meta property="og:url" content="https://kimpeople.github.io/"/>
-	<meta property="og:site_name" content="scene and sin">
-	<meta name="twitter:title" content="김민 KIM MIN"/>
-	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:image" content="https://kimpeople.github.io/images/main.jpg"/>
-	<meta name="twitter:description" content="scene and sin, portfolio website" /> 
+    <meta property="og:image" content="images/main.jpg"/>
+    <meta name="title" content="김민 KIM MIN">
     <meta name="keywords" content="kim min, min kim, photographer, photography, documentary, black and white, 집회, 시위, 경찰, 채증, 사진가, 다큐멘터리 사진, 김민 사진가">
+    <meta name="description" content="scene and sin, portfolio website">
     <title>##kim min##</title>
     <link href="styles/exp2.css" rel="stylesheet">
   </head>
@@ -25,7 +18,7 @@
           <a href="index.html">SCENE AND SIN</a>
           </div>
         </center>
-		<!-- 네비게이션 -->
+			<!-- 네비게이션 -->
 		<center>		
 			<div id="mySidenav" class="sidenav">
 			  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -69,21 +62,67 @@
 		<span class="navi" onclick="openNav3()"><a href="about.html">about</a></span>
 		</center>
 		<!-- 네비게이션 끝 -->
+		<!-- 버튼 -->
+		  <center style="padding-top: 10px;margin-bottom: -13px;">
+		  <div>we killed fairy</div>
+		  <span class="button">
+            <button class="btn" onclick="plusDivs(-1)"> Prev </button>
+                        -
+            <button class="btn" onclick="plusDivs(1)"> Next </button>
+              <span class="counter"> 01/33 </span>
+          </span>
+		  </center>
+		 <!-- 버튼 -->
         </aside>
       <main class="cell -9of12" role="main">
         <section>
-		<!--랜덤메인이미지_과거)
-              <img id="randomimg" src="" alt="" />
-		-->
-		<center>
-		<img style="max-width:95%;" src="images/main.jpg">
-		</center>
+                    <img class="mySlides" src="images/wkfairy/01.jpg">
+                    <img class="mySlides" src="images/wkfairy/02.jpg">
+					<img class="mySlides" src="images/wkfairy/03.jpg">
+					<img class="mySlides" src="images/wkfairy/04.jpg">
+					<img class="mySlides" src="images/wkfairy/05.jpg">
+					<img class="mySlides" src="images/wkfairy/06.jpg">
+					<img class="mySlides" src="images/wkfairy/07.jpg">
+					<img class="mySlides" src="images/wkfairy/08.jpg">
+					<img class="mySlides" src="images/wkfairy/09.jpg">
+					<img class="mySlides" src="images/wkfairy/10.jpg">
+					
+					<img class="mySlides" src="images/wkfairy/11.jpg">
+                    <img class="mySlides" src="images/wkfairy/12.jpg">
+					<img class="mySlides" src="images/wkfairy/13.jpg">
+					<img class="mySlides" src="images/wkfairy/14.jpg">
+					<img class="mySlides" src="images/wkfairy/15.jpg">
+					<img class="mySlides" src="images/wkfairy/16.jpg">
+					<img class="mySlides" src="images/wkfairy/17.jpg">
+					<img class="mySlides" src="images/wkfairy/18.jpg">
+					<img class="mySlides" src="images/wkfairy/19.jpg">
+					<img class="mySlides" src="images/wkfairy/20.jpg">
+					
+					<img class="mySlides" src="images/wkfairy/21.jpg">
+                    <img class="mySlides" src="images/wkfairy/22.jpg">
+					<img class="mySlides" src="images/wkfairy/23.jpg">
+					<img class="mySlides" src="images/wkfairy/24.jpg">
+					<img class="mySlides" src="images/wkfairy/25.jpg">
+					<img class="mySlides" src="images/wkfairy/26.jpg">
+					<img class="mySlides" src="images/wkfairy/27.jpg">
+					<img class="mySlides" src="images/wkfairy/28.jpg">
+					<img class="mySlides" src="images/wkfairy/29.jpg">
+					<img class="mySlides" src="images/wkfairy/30.jpg">
+					
+					<img class="mySlides" src="images/wkfairy/31.jpg">
+                    <img class="mySlides" src="images/wkfairy/32.jpg">
+					<img class="mySlides" src="images/wkfairy/33.jpg">
+					
+					
+                </ul>
+            </div>
         </section>
       </main>
     </div>
     </div>
     <script>
-function openNav() {
+	
+	function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
 }
 
@@ -106,6 +145,7 @@ function openNav3() {
 function closeNav3() {
   document.getElementById("mySidenav3").style.width = "0";
 }
+var slideIndex=1;function plusDivs(e){showDivs(slideIndex+=e)}function showDivs(e){var s,n=document.getElementsByClassName("mySlides");for(e>n.length&&(slideIndex=1),e<1&&(slideIndex=n.length),s=0;s<n.length;s++)n[s].style.display="none";n[slideIndex-1].style.display="block",document.getElementsByClassName("counter")[0].innerHTML="<span>"+slideIndex+"/"+n.length+"</span>"}showDivs(slideIndex);
     </script>
     </body>
 </html>

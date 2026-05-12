@@ -169,3 +169,57 @@ document.addEventListener('click', function(event) {
         }
     }
 });
+
+// ==========================================
+// [통합된 슬라이드 기능] (지연 로딩 + 자동 카운터 포함)
+// ==========================================
+var slideIndex = 1;
+
+// 페이지가 로드될 때 실행 (안전장치 포함)
+document.addEventListener("DOMContentLoaded", function() {
+    var x = document.getElementsByClassName("mySlides");
+    // 이 페이지에 'mySlides' 사진이 있을 때만 첫 번째 사진 띄우기
+    if (x.length > 0) { 
+        showDivs(slideIndex);
+    }
+});
+
+
+// 기존 html 파일에서 옮긴 슬라이드 기능 
+
+function plusDivs(n) {
+    showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    
+    // 안전장치: 사진이 없는 페이지면 함수를 바로 종료해서 에러 방지
+    if (x.length === 0) return; 
+
+    if (n > x.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = x.length}
+    for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";  
+    }
+    
+    // 현재 보여줄 이미지
+    var currentImg = x[slideIndex-1];
+    currentImg.style.display = "block";  
+    
+    // [지연 로딩] data-src가 있으면 진짜 src로 바꿔서 다운로드 시작
+    if (currentImg.getAttribute("data-src")) {
+        currentImg.src = currentImg.getAttribute("data-src");
+        currentImg.removeAttribute("data-src"); // 변환 후 속성 삭제
+    }
+
+    // [보너스 기능] 사진 번호(카운터) 자동 업데이트
+    var counterEl = document.querySelector(".counter");
+    if (counterEl) {
+        // 숫자가 1~9면 앞에 '0'을 붙여서 '01' 형식으로 만듦
+        var displayNum = slideIndex < 10 ? "0" + slideIndex : slideIndex;
+        // 총 사진 갯수를 자동으로 세어서 표시 (예: 01/243)
+        counterEl.innerText = displayNum + "/" + x.length;
+    }
+}

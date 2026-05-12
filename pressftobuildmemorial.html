@@ -13,7 +13,7 @@
     <body class="hack">
       <div class="grid">
         <aside class="cell -3of12">
-        <!-- 네비게이션 -->
+         <!-- 네비게이션 -->
          <center>
 		  <div id="common-nav"></div>
 		  <script src="navigation.js"></script>
@@ -21,44 +21,58 @@
 		<!-- 네비게이션 끝 -->
 		<!-- 버튼 -->
 		  <center style="padding-top: 10px;margin-bottom: -13px;">
+		  <div>여기에 추모비를 세우세요</div>
 		  <span class="button">
             <button class="btn" onclick="plusDivs(-1)"> Prev </button>
                         -
             <button class="btn" onclick="plusDivs(1)"> Next </button>
-              <span class="counter"> 01/79 </span>
+              <span class="counter"> 001/124 </span>
           </span>
 		  </center>
 		 <!-- 버튼 -->
         </aside>
       <main class="cell -9of12" role="main">
         <section>
-                    <img class="mySlides" src="images/stlu/01.jpg" alt="stan loves you all and we all burn">
-                    <img class="mySlides" src="images/stlu/02.jpg" alt="stan loves you all and we all burn">
-                    <img class="mySlides" src="images/stlu/03.jpg" alt="stan loves you all and we all burn">
-                    <img class="mySlides" src="images/stlu/04.jpg" alt="stan loves you all and we all burn">
-                    <img class="mySlides" src="images/stlu/05.jpg" alt="stan loves you all and we all burn">
-                    <img class="mySlides" src="images/stlu/05_1.jpg" alt="stan loves you all and we all burn">
-					
-                    <img class="mySlides" src="images/stlu/06.jpg" alt="stan loves you all and we all burn">
-                    <img class="mySlides" src="images/stlu/07.jpg" alt="stan loves you all and we all burn">
-                    <img class="mySlides" src="images/stlu/08.jpg" alt="stan loves you all and we all burn">
-                    <img class="mySlides" src="images/stlu/09.jpg" alt="stan loves you all and we all burn">
-                    <img class="mySlides" src="images/stlu/10.jpg" alt="stan loves you all and we all burn">
-
-                    <img class="mySlides" src="images/stlu/10_1.jpg" alt="stan loves you all and we all burn">
-                    <img class="mySlides" src="images/stlu/10_2.jpg" alt="stan loves you all and we all burn">
-                    <img class="mySlides" src="images/stlu/11.jpg" alt="stan loves you all and we all burn">
-                    <img class="mySlides" src="images/stlu/12.jpg" alt="stan loves you all and we all burn">
-                    <img class="mySlides" src="images/stlu/13.jpg" alt="stan loves you all and we all burn">
-                </ul>
-            </div>
+          <img class="mySlides" src="images/mmr/mmr01.jpg">
+		  <img class="mySlides" src="images/mmr/mmr02.jpg">
+		  <img class="mySlides" src="images/mmr/mmr03.jpg">
+		  <img class="mySlides" src="images/mmr/mmr04.jpg">
+		  <img class="mySlides" src="images/mmr/mmr05.jpg">
+		  <img class="mySlides" src="images/mmr/mmr06.jpg">
+		  <img class="mySlides" src="images/mmr/mmr07.jpg">
+		  <img class="mySlides" src="images/mmr/mmr08.jpg">
+		  <img class="mySlides" src="images/mmr/mmr09.jpg">
+		  
+		  <img class="mySlides" src="images/mmr/mmr10.jpg">
+		  <img class="mySlides" src="images/mmr/mmr11.jpg">
+		  <img class="mySlides" src="images/mmr/mmr12.jpg">
+		  <img class="mySlides" src="images/mmr/mmr13.jpg">
+		  <img class="mySlides" src="images/mmr/mmr14.jpg">
+		  <img class="mySlides" src="images/mmr/mmr15.jpg">
+		  <img class="mySlides" src="images/mmr/mmr16.jpg">
+		  <img class="mySlides" src="images/mmr/mmr17.jpg">
+		  <img class="mySlides" src="images/mmr/mmr18.jpg">
+		  <img class="mySlides" src="images/mmr/mmr19.jpg">
+		  
+		  <img class="mySlides" src="images/mmr/mmr20.jpg">
+		  <img class="mySlides" src="images/mmr/mmr21.jpg">
+		  <img class="mySlides" src="images/mmr/mmr22.jpg">
+		  <img class="mySlides" src="images/mmr/mmr23.jpg">
+		  <img class="mySlides" src="images/mmr/mmr24.jpg">
+		  <img class="mySlides" src="images/mmr/mmr25.jpg">
+		  <img class="mySlides" src="images/mmr/mmr26.jpg">
+		  <img class="mySlides" src="images/mmr/0mmr27.jpg">
+		  <img class="mySlides" src="images/mmr/mmr28.jpg">
+		  <img class="mySlides" src="images/mmr/mmr29.jpg">
+		  
+		  <img class="mySlides" src="images/mmr/mmr30.jpg">
+		  <img class="mySlides" src="images/mmr/mmr31.jpg">
         </section>
       </main>
     </div>
     </div>
     <script>
-	
-	function openNav() {
+function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
 }
 
@@ -72,8 +86,7 @@ function openNav2() {
 
 function closeNav2() {
   document.getElementById("mySidenav2").style.width = "0";
-}
-
+}	
 function openNav3() {
   document.getElementById("mySidenav3").style.width = "250px";
 }
@@ -81,6 +94,7 @@ function openNav3() {
 function closeNav3() {
   document.getElementById("mySidenav3").style.width = "0";
 }
+	
 var slideIndex=1;function plusDivs(e){showDivs(slideIndex+=e)}function showDivs(e){var s,n=document.getElementsByClassName("mySlides");for(e>n.length&&(slideIndex=1),e<1&&(slideIndex=n.length),s=0;s<n.length;s++)n[s].style.display="none";n[slideIndex-1].style.display="block",document.getElementsByClassName("counter")[0].innerHTML="<span>"+slideIndex+"/"+n.length+"</span>"}showDivs(slideIndex);
     </script>
     </body>

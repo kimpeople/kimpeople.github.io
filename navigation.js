@@ -1,0 +1,148 @@
+// navigation.js
+function loadNavigation() {
+  const navHTML = `
+    <center>
+      <div class="logo__component">
+        <a href="index.html">SCENE AND SIN</a>
+      </div>
+    </center>
+    
+    <center>
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="YES_WE_CAM.html">Yes We Cam</a>
+        <a href="mayday.html">MAYDAY</a>
+        <a href="counterrhythm.html">CounterRhythm</a>
+        <a href="csuicide.html">협동자살</a>
+        <a href="miredosi.html">Mi-Re-Do-Si</a>
+        <a href="jinxjo.html">징조</a>
+        <a href="csuicide2.html">협동자살2</a>
+        <a href="wkfairy.html">요정과 바늘술사</a>
+		<a href="pressftobuildmemorial.html">여기에 추모비를 세우세요</a>
+        <a href="cementcupcake.html">Cement Cupcake</a>
+		<a href="flowercracker.html">Flower Cracker</a>
+        <a href="wesports.html">생활체육</a>
+      </div>
+      <span class="navi" onclick="openNav()"><a href="#">works/</a></span>
+
+      <div id="mySidenav2" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav2()">&times;</a>
+        <a href="ywc_install.html">Yes We Cam - installation view</a>
+        <a href="cr_install.html">CounterRhythm - installation view</a>
+        <a href="cc_install.html">Cement Cupcake - installation view</a>
+        <a href="mdlf.html">MDLF</a>
+        <a href="hland.html">Homeland</a>
+        <a href="solidarity.html">Solidarity</a>
+      </div>
+      <span class="navi" onclick="openNav2()"><a href="#">chests/</a></span>
+
+      <div id="mySidenav3" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav3()">&times;</a>
+        <a href="YES_WE_CAM_note.html">Yes We Cam - notes</a>
+        <a href="mayday_note.html">MAYDAY - notes</a>
+        <a href="counterrhythm_note.html">CounterRhythm - notes</a>
+        <a href="csuicide_knot.html">협동자살 - knots</a>
+        <a href="miredosi_note.html">Mi-Re-Do-Si - notes</a>
+        <a href="jinxjo_note.html">징조 - notes</a>
+        <a href="wkfairy_note.html">요정과 바늘술사 - notes</a>
+		<a href="pressftobuildmemorial_note.html">여기에 추모비를 세우세요 - notes</a>
+        <a href="cementcupcake_note.html">Cement Cupcake - notes</a>
+      </div>
+      <span class="navi" onclick="openNav3()"><a href="#">texts/</a></span>
+      
+      <span class="navi"><a href="about.html">about</a></span>
+    </center>
+  `;
+
+  // aside 태그 내부에 메뉴 삽입
+  document.getElementById("common-nav").innerHTML = navHTML;
+}
+
+// 사이드바 열고 닫는 함수들 (기존 기능 그대로 유지)
+function openNav() { document.getElementById("mySidenav").style.width = "250px"; }
+function closeNav() { document.getElementById("mySidenav").style.width = "0"; }
+function openNav2() { document.getElementById("mySidenav2").style.width = "250px"; }
+function closeNav2() { document.getElementById("mySidenav2").style.width = "0"; }
+function openNav3() { document.getElementById("mySidenav3").style.width = "250px"; }
+function closeNav3() { document.getElementById("mySidenav3").style.width = "0"; }
+
+// 페이지 로드 시 실행
+window.onload = loadNavigation;
+
+
+// [추가된 기능] 키보드 방향키로 슬라이드 넘기기
+document.addEventListener('keydown', function(event) {
+    // 현재 페이지에 plusDivs 함수(슬라이드 기능)가 있는지 확인
+    if (typeof plusDivs === 'function') {
+        if (event.key === 'ArrowLeft') {
+            // 왼쪽 방향키를 누르면 이전 사진으로
+            plusDivs(-1);
+        } else if (event.key === 'ArrowRight') {
+            // 오른쪽 방향키를 누르면 다음 사진으로
+            plusDivs(1);
+        }
+    }
+});
+
+
+// [추가 기능 2] PC 마우스 드래그 & 모바일 스와이프로 슬라이드 넘기기 (이미지 위에서만 작동)
+let startX = 0;
+let endX = 0;
+let isDraggingImage = false; // 💡 추가됨: 지금 이미지 위에서 드래그 중인지 확인하는 스위치
+
+// === 모바일 터치 이벤트 ===
+document.addEventListener('touchstart', function(event) {
+    // 터치한 곳이 'mySlides' 이미지일 때만 스위치를 켬
+    if (event.target.classList.contains('mySlides')) {
+        isDraggingImage = true;
+        startX = event.changedTouches[0].screenX;
+    }
+}, false);
+
+document.addEventListener('touchend', function(event) {
+    // 스위치가 켜져 있을 때(이미지 위에서 시작했을 때)만 작동
+    if (isDraggingImage) {
+        endX = event.changedTouches[0].screenX;
+        handleSwipe();
+        isDraggingImage = false; // 작동 후 스위치 다시 끔
+    }
+}, false);
+
+// === PC 마우스 이벤트 ===
+document.addEventListener('mousedown', function(event) {
+    // 클릭한 곳이 'mySlides' 이미지일 때만 스위치를 켬
+    if (event.target.classList.contains('mySlides')) {
+        isDraggingImage = true;
+        startX = event.screenX;
+    }
+}, false);
+
+document.addEventListener('mouseup', function(event) {
+    // 스위치가 켜져 있을 때만 작동
+    if (isDraggingImage) {
+        endX = event.screenX;
+        handleSwipe();
+        isDraggingImage = false; // 작동 후 스위치 다시 끔
+    }
+}, false);
+
+// === 방향 계산 및 슬라이드 넘김 실행 ===
+function handleSwipe() {
+    if (typeof plusDivs === 'function') {
+        let swipeDistance = endX - startX;
+        
+        // 50px 이상 움직였을 때만 작동
+        if (swipeDistance < -50) {
+            plusDivs(1);  // 왼쪽으로 밀었을 때 (다음 사진)
+        } else if (swipeDistance > 50) {
+            plusDivs(-1); // 오른쪽으로 밀었을 때 (이전 사진)
+        }
+    }
+}
+
+// [중요 팁] PC에서 이미지 드래그 시 발생하는 브라우저 기본 동작(고스트 이미지) 방지
+document.addEventListener('dragstart', function(event) {
+    if (event.target.classList.contains('mySlides')) {
+        event.preventDefault();
+    }
+});

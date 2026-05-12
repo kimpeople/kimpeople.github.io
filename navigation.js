@@ -195,31 +195,43 @@ function showDivs(n) {
     var i;
     var x = document.getElementsByClassName("mySlides");
     
-    // 안전장치: 사진이 없는 페이지면 함수를 바로 종료해서 에러 방지
+    // 안전장치: 사진이 없는 페이지면 함수를 바로 종료
     if (x.length === 0) return; 
 
     if (n > x.length) {slideIndex = 1}
     if (n < 1) {slideIndex = x.length}
+    
     for (i = 0; i < x.length; i++) {
         x[i].style.display = "none";  
     }
     
-    // 현재 보여줄 이미지
-    var currentImg = x[slideIndex-1];
+    // 현재 보여줄 이미지 화면에 표시
+    var currentIndex = slideIndex - 1;
+    var currentImg = x[currentIndex];
     currentImg.style.display = "block";  
     
-    // [지연 로딩] data-src가 있으면 진짜 src로 바꿔서 다운로드 시작
-    if (currentImg.getAttribute("data-src")) {
-        currentImg.src = currentImg.getAttribute("data-src");
-        currentImg.removeAttribute("data-src"); // 변환 후 속성 삭제
+    // ==========================================
+    // [업그레이드] 스마트 프리로딩 (Smart Preloading)
+    // 현재(0), 다음(1), 다다음(2), 이전(-1) 사진까지 총 4장을 미리 다운로드
+    // ==========================================
+    var preloadOffsets = [0, 1, 2, -1]; 
+    
+    for (var j = 0; j < preloadOffsets.length; j++) {
+        // 전체 사진 갯수를 넘어가면 맨 앞으로 순환하도록 계산 (예: 마지막 사진일 때 1, 2번 로딩)
+        var targetIndex = (currentIndex + preloadOffsets[j] + x.length) % x.length;
+        var targetImg = x[targetIndex];
+        
+        // 해당 이미지가 존재하고 아직 다운로드 전(data-src)이라면, 진짜 src로 변경
+        if (targetImg && targetImg.getAttribute("data-src")) {
+            targetImg.src = targetImg.getAttribute("data-src");
+            targetImg.removeAttribute("data-src");
+        }
     }
 
-    // [보너스 기능] 사진 번호(카운터) 자동 업데이트
+    // 사진 번호(카운터) 자동 업데이트
     var counterEl = document.querySelector(".counter");
     if (counterEl) {
-        // 숫자가 1~9면 앞에 '0'을 붙여서 '01' 형식으로 만듦
         var displayNum = slideIndex < 10 ? "0" + slideIndex : slideIndex;
-        // 총 사진 갯수를 자동으로 세어서 표시 (예: 01/243)
         counterEl.innerText = displayNum + "/" + x.length;
     }
 }

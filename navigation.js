@@ -140,9 +140,32 @@ function handleSwipe() {
     }
 }
 
-// [중요 팁] PC에서 이미지 드래그 시 발생하는 브라우저 기본 동작(고스트 이미지) 방지
+// PC에서 이미지 드래그 시 발생하는 브라우저 기본 동작(고스트 이미지) 방지
 document.addEventListener('dragstart', function(event) {
     if (event.target.classList.contains('mySlides')) {
         event.preventDefault();
+    }
+});
+
+// [추가 기능 4] 이미지 좌/우측 1/4 영역 터치(클릭) 시 슬라이드 넘기기
+document.addEventListener('click', function(event) {
+    // 1. 클릭한 곳이 'mySlides' 클래스를 가진 작품 이미지인지 확인
+    if (event.target.classList.contains('mySlides')) {
+        // 2. 현재 페이지에 슬라이드 기능(plusDivs)이 있는지 확인
+        if (typeof plusDivs === 'function') {
+            // 3. 클릭한 X 좌표와 이미지의 전체 너비 계산
+            var clickX = event.offsetX; 
+            var imgWidth = event.target.offsetWidth; 
+
+            // 4. 영역을 1/4(25%) 기준으로 나누어 판별
+            if (clickX < imgWidth * 0.25) {
+                // 이미지의 왼쪽 1/4 지점 이내를 눌렀을 때 (이전 사진)
+                plusDivs(-1);
+            } else if (clickX > imgWidth * 0.75) {
+                // 이미지의 오른쪽 1/4 지점 이후를 눌렀을 때 (다음 사진)
+                plusDivs(1);
+            }
+            // 가운데 50% 영역을 눌렀을 때는 아무 동작도 하지 않음
+        }
     }
 });

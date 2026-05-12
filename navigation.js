@@ -173,26 +173,37 @@ document.addEventListener('click', function(event) {
 // ==========================================
 // [통합된 슬라이드 기능] (지연 로딩 + 자동 카운터 포함)
 // ==========================================
+// ==========================================
+// [통합된 슬라이드 기능] 
+// (초기 지연 로딩 + 페이지 로드 직후 전체 백그라운드 프리로딩)
+// ==========================================
 var slideIndex = 1;
 
-// 페이지가 로드될 때 실행 (안전장치 포함)
+// 1. HTML 뼈대가 잡히면 즉시 첫 번째 사진을 띄움 (가장 빠름)
 document.addEventListener("DOMContentLoaded", function() {
     var x = document.getElementsByClassName("mySlides");
-    // 이 페이지에 'mySlides' 사진이 있을 때만 첫 번째 사진 띄우기
     if (x.length > 0) { 
         showDivs(slideIndex);
     }
 });
 
-
-// 기존 html 파일에서 옮긴 슬라이드 기능 
+// 2. [핵심] 페이지 전체(앞쪽 사진 등)가 완전히 다 뜬 다음, 몰래 나머지 사진 전체 다운로드
+window.addEventListener('load', function() {
+    // 브라우저가 화면을 그릴 시간을 0.5초(500ms) 정도 살짝 준 뒤에 다운로드를 시작합니다.
+    setTimeout(function() {
+        var x = document.getElementsByClassName("mySlides");
+        for (var k = 0; k < x.length; k++) {
+            if (x[k].getAttribute("data-src")) {
+                x[k].src = x[k].getAttribute("data-src");
+                x[k].removeAttribute("data-src");
+            }
+        }
+    }, 500);
+});
 
 function plusDivs(n) {
     showDivs(slideIndex += n);
 }
-// ... [위쪽의 DOMContentLoaded 및 plusDivs 코드는 그대로 유지] ...
-
-var idleTimer = null; // 💡 추가됨: 사용자가 머무는 시간을 잴 타이머 변수
 
 function showDivs(n) {
     var i;
@@ -200,30 +211,19 @@ function showDivs(n) {
     
     if (x.length === 0) return; 
 
-    // 1. 사용자가 버튼을 눌러 사진을 넘기면, 기존에 세어두던 타이머를 즉시 취소합니다.
-    clearTimeout(idleTimer);
-
     if (n > x.length) {slideIndex = 1}
     if (n < 1) {slideIndex = x.length}
-    
     for (i = 0; i < x.length; i++) {
         x[i].style.display = "none";  
     }
     
-    var currentIndex = slideIndex - 1;
-    var currentImg = x[currentIndex];
+    var currentImg = x[slideIndex-1];
     currentImg.style.display = "block";  
     
-    // [1단계] 즉시 스마트 프리로딩 (현재, 앞, 뒤 사진 4장만 즉시 다운로드)
-    var preloadOffsets = [0, 1, 2, -1]; 
-    for (var j = 0; j < preloadOffsets.length; j++) {
-        var targetIndex = (currentIndex + preloadOffsets[j] + x.length) % x.length;
-        var targetImg = x[targetIndex];
-        
-        if (targetImg && targetImg.getAttribute("data-src")) {
-            targetImg.src = targetImg.getAttribute("data-src");
-            targetImg.removeAttribute("data-src");
-        }
+    // 만약 전체 다운로드가 미처 끝나기 전에 사용자가 버튼을 눌렀을 때를 대비한 안전장치
+    if (currentImg.getAttribute("data-src")) {
+        currentImg.src = currentImg.getAttribute("data-src");
+        currentImg.removeAttribute("data-src"); 
     }
 
     // 사진 번호(카운터) 업데이트
@@ -232,19 +232,4 @@ function showDivs(n) {
         var displayNum = slideIndex < 10 ? "0" + slideIndex : slideIndex;
         counterEl.innerText = displayNum + "/" + x.length;
     }
-
-    // ==========================================
-    // [2단계] 유휴 시간(Idle) 전체 로딩
-    // 사진을 넘긴 후 '3초(3000ms)' 동안 가만히 있으면, 나머지 모든 사진 다운로드 시작
-    // ==========================================
-    idleTimer = setTimeout(function() {
-        for (var k = 0; k < x.length; k++) {
-            if (x[k].getAttribute("data-src")) {
-                x[k].src = x[k].getAttribute("data-src");
-                x[k].removeAttribute("data-src");
-            }
-        }
-        // 확인용 (필요시 아래 주석을 풀면 브라우저 개발자 도구에 메시지가 뜹니다)
-        // console.log("3초 대기 완료: 남은 모든 사진 로딩 시작!");
-    }, 3000); // 3초 (원하시면 2000이나 5000으로 수정 가능합니다)
 }
